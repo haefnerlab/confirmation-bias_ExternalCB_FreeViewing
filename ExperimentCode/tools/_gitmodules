@@ -1,0 +1,3 @@
+[submodule "boundedline-pkg"]
+	path = boundedline-pkg
+	url = git@github.com:kakearney/boundedline-pkg.git
