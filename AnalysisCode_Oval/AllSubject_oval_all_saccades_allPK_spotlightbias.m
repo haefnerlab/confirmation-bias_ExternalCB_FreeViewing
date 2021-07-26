@@ -1,7 +1,7 @@
 close all; clear all; clc;
 warning('off');
 fix_cond = 'saccade_code';%'eyelink';
-boots = 100;
+boots = 500;
 fix_cluster_dist = 240; % value used to cluster fixations closeby as one point!! prevents bias from artifacts!!
 hpr1 = 0.0;
 hpr2 = logspace(-5, 5, 100);
@@ -119,7 +119,7 @@ for sub=1:num_sub
         xlabel('Fixations','fontsize',20);
         xticks([1 fix(max_fixations{sub}/2) max_fixations{sub}]);
         yticks([1 7 13]);
-        for xl=1:max_fixations(sub)
+        for xl=1:max_fixations{sub}
             xline(xl+0.5,'k','LineWidth',0.75);
         end
         for yl=1:13
@@ -203,8 +203,8 @@ for sub=1:num_sub
         ax.YAxis.FontSize = 20;
         
         
-        pause;
-        close all;
+%         pause;
+%         close all;
     end
 end
 %%
@@ -985,3 +985,4 @@ for bn=2:length(bin)
         end
     end
 end
+
